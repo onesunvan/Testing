@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Choose test {% endblock %}
+
+
+{% block content %}
+    <h1 style="color: red">List of tests</h1>
+    <form action='' method="POST">
+        <input type="hidden" name='command' value="choose_test"/>
+        {% for subject in lst %}
+            <p>
+                {{ subject.0 }}
+                <br/>
+                {% for test in subject.1 %}
+                    <input type="radio" name="test" value="{{ test.id }}"/>{{ test.name }}<br/>
+                {% endfor %}
+            </p>
+        {% endfor %}
+        <input type="submit" value="Choose your test"/>
+    </form>
+
+    {% include 'include/logout.html' %}
+{% endblock %}

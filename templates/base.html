@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body style="background-color: rgba(231,255,107,0.99);
+            height:100%;
+            width: 100%;
+            margin:0;
+            position:absolute;">
+    <table style="height:100%;
+            width:100%;">
+        <tr>
+            <td align='center'>
+                {% block content %}Hello{% endblock %}
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
